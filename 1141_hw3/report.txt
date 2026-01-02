@@ -1,0 +1,10 @@
+student ID:   r14943062
+
+Clock Period:  6.0 (ns)
+
+simulation time for tb1: 26352 (ns)
+simulation time for tb2: 28944 (ns)
+simulation time for tb3: 26352 (ns)
+simulation time for tb4: 28944 (ns)
+
+Area:      587665.667048   (um^2)

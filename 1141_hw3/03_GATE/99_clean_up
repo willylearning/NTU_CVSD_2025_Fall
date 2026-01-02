@@ -1,0 +1,5 @@
+rm -rf simv* csrc*
+rm -rf *.history *.key
+rm -rf novas*
+rm -rf nWaveLog
+rm -rf spyglass-1 verdiLog

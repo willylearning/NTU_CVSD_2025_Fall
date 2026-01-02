@@ -1,0 +1,54 @@
+----------------------
+R-type  $rd  $r1  $r2
+I-type  $rd  $r1  im
+S-type  $r2  $r1  im
+B-type  $r1  $r2  im
+U-type  $rd       im
+----------------------
+auipc   $0            0x00610
+addi    $31    $31    1468
+sub     $0     $0     $31
+addi    $5     $5     10
+srl     $0     $0     $5
+addi    $21    $21    2
+addi    $1     $31    134
+addi    $3     $30    642
+addi    $4     $30    511
+addi    $5     $30    2
+srl     $1     $1     $5
+srl     $4     $4     $5
+srl     $3     $3     $5
+addi    $1     $1     583
+addi    $4     $4     294
+sw      $1     $0     0
+sw      $3     $0     4
+sw      $4     $0     8
+auipc   $30           0x41800
+addi    $30    $30    1468
+auipc   $5            0x3f000
+sub     $5     $5     $2
+auipc   $31           0x00800
+sub     $31    $30    $31
+sw      $5     $0     0
+sw      $30    $0     4
+sw      $31    $0     8
+flw     $0     $0     0
+flw     $1     $0     4
+flw     $2     $0     8
+fmul    $6     $0     $1
+fmul    $7     $2     $1
+auipc   $8            0xFFC02
+sub     $8     $8     $1
+sw      $8     $0     4
+flw     $1     $0     4
+fclass  $6     $6
+fclass  $7     $7
+fclass  $8     $1
+sw      $6     $0     12
+sw      $7     $0     16
+sw      $8     $0     20
+fsub    $3     $0     $2
+fsw     $3     $0     24
+fsub    $4     $2     $1
+fsw     $4     $0     28
+eof 

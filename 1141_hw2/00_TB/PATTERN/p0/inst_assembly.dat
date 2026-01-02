@@ -1,0 +1,70 @@
+----------------------
+R-type  $rd  $r1  $r2
+I-type  $rd  $r1  im
+S-type  $r2  $r1  im
+B-type  $r1  $r2  im
+U-type  $rd       im
+----------------------
+addi     $0     $0     1024  
+addi     $1     $0     32  
+addi     $3     $30    127
+sub      $4     $2     $0   
+auipc    $5            0x40200
+jalr     $11    $4     1048
+addi     $5     $5     -1854
+addi     $1     $31    -64 
+srl      $5     $5     $11
+addi     $6     $8     2
+auipc    $0            0x00004
+srl      $0     $0     $6
+addi     $0     $0     -10
+sw       $4     $0     0   
+lw       $4     $0     64  
+slt      $2     $8     $10  
+addi     $4     $3     127   
+slt      $8     $5     $4
+addi     $7     $7     2  
+auipc    $10           0x00001 
+blt      $6     $7     8
+jalr     $12    $8     52
+slt      $7     $1     $1   
+sw       $4     $0     12  
+lw       $7     $0     4   
+addi     $8     $10    800
+blt      $7     $6     12   
+lw       $6     $5     8   
+lw       $5     $2     8   
+beq      $2     $3     8   
+beq      $1     $7     12     
+blt      $3     $1     12  
+srl      $1     $1     $6  
+slt      $6     $7     $1   
+blt      $1     $5     8
+sw       $6     $8     100 
+addi     $10    $11    120 
+sw       $10    $0     36  
+lw       $6     $0     964
+addi     $6     $6     -5
+addi     $11    $7     22
+srl      $12    $4     $11
+auipc    $13           0x45001
+addi     $12    $12    -1753
+addi     $14    $14    2
+srl      $12    $12    $14
+addi     $13    $13    -589
+sw       $12    $0     20
+sw       $13    $0     32
+flw      $0     $0     20
+flw      $1     $0     32
+fmul     $2     $0     $1
+fsub     $3     $0     $1
+fsw      $2     $0     40
+fsw      $3     $0     48
+fclass   $15    $2
+fcvt.w.s $16    $2     
+fcvt.w.s $17    $3    
+blt      $16    $17    8
+sw       $15    $0     56
+sw       $16    $0     100
+sw       $17    $0     108
+eof 

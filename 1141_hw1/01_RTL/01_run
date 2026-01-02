@@ -1,0 +1,1 @@
+vcs -full64 -R -f rtl.f +v2k -sverilog -debug_access+all +define+$1 | tee sim.log

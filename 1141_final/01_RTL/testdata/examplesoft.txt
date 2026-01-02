@@ -1,0 +1,71 @@
+Two smallest absolute values: 24 (|24|) at index 44, 50 (|50|) at index 1
+
+Four variations of bitstring_2:
+Variation 1 (00): 101100010000110000010011001011000101000010101101101101010001001 
+Variation 2 (01): 101100010000110000010011001011000101000010101101101101010001011
+Variation 3 (10): 101100010000110000110011001011000101000010101101101101010001001
+Variation 4 (11): 101100010000110000110011001011000101000010101101101101010001011
+bitstring_2 (rows 9-16): 101100010000110000010011001011000101000010101101101101010001001
+
+
+Test: bitstring_2 Variation 1
+Computing Syndromes:
+  Syndrome S1 = 48 (binary: 0b110000), Log Table: 10
+  Syndrome S2 = 60 (binary: 0b111100), Log Table: 20
+  Syndrome S3 = 25 (binary: 0b11001), Log Table: 45
+  Syndrome S4 = 47 (binary: 0b101111), Log Table: 40
+Running Berlekamp-Massey Algorithm:
+  Initial C: [1, 0, 0, 0, 0], B: [1, 0, 0, 0, 0], L: 0, m: 1, b: 1
+  Step 1: d=48, Updated C in log: [0, 10, 'undefined', 'undefined', 'undefined'], L: 1, m: 1, b: 48        
+  Step 2: d=0, Updated C in log: [0, 10, 'undefined', 'undefined', 'undefined'], L: 1, m: 2, b: 48
+  Step 3: d=42, Updated C in log: [0, 10, 43, 'undefined', 'undefined'], L: 2, m: 1, b: 42
+  Step 4: d=0, Updated C in log: [0, 10, 43, 'undefined', 'undefined'], L: 2, m: 2, b: 42
+Errors detected: 2, at [], Success: False
+
+
+Test: bitstring_2 Variation 2
+Computing Syndromes:
+  Syndrome S1 = 50 (binary: 0b110010), Log Table: 46
+  Syndrome S2 = 56 (binary: 0b111000), Log Table: 29
+  Syndrome S3 = 17 (binary: 0b10001), Log Table: 24
+  Syndrome S4 = 63 (binary: 0b111111), Log Table: 58
+Running Berlekamp-Massey Algorithm:
+  Initial C: [1, 0, 0, 0, 0], B: [1, 0, 0, 0, 0], L: 0, m: 1, b: 1
+  Step 1: d=50, Updated C in log: [0, 46, 'undefined', 'undefined', 'undefined'], L: 1, m: 1, b: 50        
+  Step 2: d=0, Updated C in log: [0, 46, 'undefined', 'undefined', 'undefined'], L: 1, m: 2, b: 50
+  Step 3: d=20, Updated C in log: [0, 46, 31, 'undefined', 'undefined'], L: 2, m: 1, b: 20
+  Step 4: d=0, Updated C in log: [0, 46, 31, 'undefined', 'undefined'], L: 2, m: 2, b: 20
+Errors detected: 2, at [14, 17], Success: True
+value = 4754 ,-386
+
+Test: bitstring_2 Variation 3
+Computing Syndromes:
+  Syndrome S1 = 29 (binary: 0b11101), Log Table: 41
+  Syndrome S2 = 30 (binary: 0b11110), Log Table: 19
+  Syndrome S3 = 26 (binary: 0b11010), Log Table: 49
+  Syndrome S4 = 27 (binary: 0b11011), Log Table: 38
+Running Berlekamp-Massey Algorithm:
+  Initial C: [1, 0, 0, 0, 0], B: [1, 0, 0, 0, 0], L: 0, m: 1, b: 1
+  Step 1: d=29, Updated C in log: [0, 41, 'undefined', 'undefined', 'undefined'], L: 1, m: 1, b: 29        
+  Step 2: d=0, Updated C in log: [0, 41, 'undefined', 'undefined', 'undefined'], L: 1, m: 2, b: 29
+  Step 3: d=35, Updated C in log: [0, 41, 33, 'undefined', 'undefined'], L: 2, m: 1, b: 35
+  Step 4: d=0, Updated C in log: [0, 41, 33, 'undefined', 'undefined'], L: 2, m: 2, b: 35
+Errors detected: 2, at [43, 53], Success: True
+value = 4806, -334
+
+Test: bitstring_2 Variation 4
+Computing Syndromes:
+  Syndrome S1 = 31 (binary: 0b11111), Log Table: 56
+  Syndrome S2 = 26 (binary: 0b11010), Log Table: 49
+  Syndrome S3 = 18 (binary: 0b10010), Log Table: 33
+  Syndrome S4 = 11 (binary: 0b1011), Log Table: 35
+Running Berlekamp-Massey Algorithm:
+  Initial C: [1, 0, 0, 0, 0], B: [1, 0, 0, 0, 0], L: 0, m: 1, b: 1
+  Step 1: d=31, Updated C in log: [0, 56, 'undefined', 'undefined', 'undefined'], L: 1, m: 1, b: 31        
+  Step 2: d=0, Updated C in log: [0, 56, 'undefined', 'undefined', 'undefined'], L: 1, m: 2, b: 31
+  Step 3: d=40, Updated C in log: [0, 56, 22, 'undefined', 'undefined'], L: 2, m: 1, b: 40
+  Step 4: d=0, Updated C in log: [0, 56, 22, 'undefined', 'undefined'], L: 2, m: 2, b: 40
+Errors detected: 2, at [4, 18], Success: True
+value = 4694, -446
+
+Final Answer: 43, 44, 53 (Variation 3)

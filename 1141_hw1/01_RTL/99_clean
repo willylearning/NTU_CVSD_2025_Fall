@@ -1,0 +1,5 @@
+rm -rf *.history *.log *.fsdb
+rm -rf simv* novas*
+rm -rf csrc ucli.key vc_hdrs.h BSSLib.lib++
+rm -rf nWaveLog verdiLog
+rm -rf spyglass-1
